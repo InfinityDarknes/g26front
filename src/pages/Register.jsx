@@ -36,23 +36,26 @@ const Register = () => {
     }
     else{
       const userData = {
-         name,
-         email,
-         password
+         name, email, password
         }
         dispatch(register(userData))
     }
   }
-  useEffect(()=>{
-    if(isError){      
-      toast.error(message)
+
+  useEffect(() => {
+
+    if (isError) {
+        toast.error(message)
     }
-    if(isSuccess){
-      navigate('/login')
+
+    if (isSuccess) {
+        navigate('/login')
     }
+
     dispatch(reset())
 
-  },[user, isError,isSuccess,message,navigate,dispatch])
+
+}, [user, isError, isSuccess, message, navigate, dispatch])
 
   if(isLoading){
     return <Spinner/>
