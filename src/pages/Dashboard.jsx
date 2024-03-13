@@ -21,7 +21,9 @@ const Dashboard = () => {
     if(!user){
       navigate('/login')
     }
-    dispatch(getTareas())
+    else{
+      dispatch(getTareas())
+    }
 
     return ()=>{
       dispatch(reset())
